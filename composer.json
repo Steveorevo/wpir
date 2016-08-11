@@ -1,0 +1,25 @@
+{
+  "name": "steveorevo/wpir",
+  "description": "The WPIR plugin allows you to maniuplate IR controllable devices (televisions, Blueray players, XBox, etc.) as IoT (Internet of Things) devices using WordPress.",
+  "keywords": ["iot", "infrared", "remote", "automation", "raspberrypi"],
+  "homepage": "https://github.com/Steveorevo/wpir",
+  "type": "library",
+  "license": "GPLv2",
+  "authors": [
+    {
+      "name": "Stephen J. Carnam",
+      "email": "steve@steveorevo.com",
+      "homepage": "http://steveorevo.com",
+      "role": "developer"
+    }
+  ],
+  "require": {
+    "steveorevo/wp-hooks": "1.1.0",
+    "steveorevo/gstring": "1.1.*"
+  },
+  "autoload": {
+    "psr-0": {
+      "Steveorevo": "src"
+    }
+  }
+}
