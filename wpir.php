@@ -2,7 +2,7 @@
 /*
 Plugin Name: WPIR
 Plugin URI: http://github.com/steveorevo/wpir
-Description: The WPIR plugin allows you to maniuplate IR controllable devices (televisions, Blueray players, XBox, etc.) as IoT (Internet of Things) devices using WordPress atop LIRC.
+Description: The WPIR plugin allows you to maniuplate IR controllable devices (televisions, Blueray players, XBox, etc.) as IoT (Internet of Things) devices using WordPress.
 Author: Stephen J. Carnam
 Version: 1.0.0
 Author URI: http://steveorevo.com
@@ -34,8 +34,8 @@ class WPIR extends WP_Hooks {
 
 	function wp_ajax_hello_wpir() {
 		check_ajax_referer( 'steveorevo_wpir', 'security' );
-		$r =  exec( 'irsend SEND_ONCE CANDLE KEY_NAVY' );
-//		$r =  exec( 'irsend SEND_ONCE CANDLE KEY_RED' );
+		$id = urldecode($_POST['id']);
+		$r =  exec( 'irsend SEND_ONCE CANDLE ' . $id );
 		echo json_encode( $r );
 		exit;
 	}
